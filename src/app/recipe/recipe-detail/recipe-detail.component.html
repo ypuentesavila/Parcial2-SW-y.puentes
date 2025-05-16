@@ -1,21 +1,20 @@
-<div class="recipe-detail">
-  <h2>{{ recipe.nombre }}</h2>
-  <img
-    class="recipe-detail-img"
-    [src]="recipe.imagen"
-    alt="{{ recipe.imagen }}"
-  />
-  <p><strong>Porciones:</strong> {{ recipe.porciones }}</p>
-  <p><strong>Tiempo:</strong> {{ recipe.tiempo_minutos }} min</p>
-  <h3>Ingredientes</h3>
-  <app-ingredient-list
-    [ingredients]="recipe.ingredientes"
-  ></app-ingredient-list>
+<h1 class="titulo">Recetas uniandes</h1>
+<div class="detalle-container" *ngIf="recipeDetail">
+  <img [src]="recipeDetail.imagen || 'https://via.placeholder.com/300'" alt="{{ recipeDetail.nombre }}" />
+  <div class="info">
+    <h2>{{ recipeDetail.nombre }}</h2>
+    <p><strong>Dificultad:</strong> {{ recipeDetail.dificultad }}</p>
+    <p><strong>Tiempo:</strong> {{ recipeDetail.tiempo }}</p>
+    <p><strong>Porciones:</strong> {{ recipeDetail.porciones }}</p>
+    <p><strong>Tipo:</strong> {{ recipeDetail.tipo }}</p>
 
-  <h3>Pasos</h3>
-  <ol>
-    <li *ngFor="let step of recipe.pasos">
-      {{ step }}
-    </li>
-  </ol>
+    <h3>Ingredientes</h3>
+    <p><strong>Ingrediente más usado:</strong> {{ getIngredienteMasUsado() }}</p>
+    <ul>
+      <li *ngFor="let ing of recipeDetail.ingredientes">{{ ing }}</li>
+    </ul>
+
+    <h3>Pasos</h3>
+    <p>{{ recipeDetail.preparacion }}</p>
+  </div>
 </div>

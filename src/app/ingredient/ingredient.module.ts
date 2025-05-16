@@ -1,10 +1,7 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
+import { Component } from '@angular/core';
 
-@NgModule({
-  declarations: [IngredientListComponent],
-  imports: [CommonModule],
-  exports: [IngredientListComponent],
+@Component({
+  selector: 'app-ingredient-list',
+  template: `<p>ingredient-list works!</p>`,
 })
-export class IngredientModule {}
+export class IngredientListComponent {}

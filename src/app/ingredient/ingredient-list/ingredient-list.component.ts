@@ -1,15 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Ingredient } from '../Ingredient';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IngredientListComponent } from '../ingredient.module';
 
-@Component({
-  selector: 'app-ingredient-list',
-  standalone: false,
-  templateUrl: './ingredient-list.component.html',
-  styleUrl: './ingredient-list.component.css',
+@NgModule({
+  imports: [CommonModule, IngredientListComponent],                 
+  exports: [IngredientListComponent],   
 })
-export class IngredientListComponent implements OnInit {
-  @Input() ingredients: Ingredient[] = [];
-  constructor() {}
+export class IngredientModule {}
+export { IngredientListComponent };
 
-  ngOnInit(): void {}
-}
