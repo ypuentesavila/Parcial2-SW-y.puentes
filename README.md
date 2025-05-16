@@ -1,1 +1,4 @@
-# 2025-10
+# Parcial Práctico 2
+
+- Nombre:
+- código:

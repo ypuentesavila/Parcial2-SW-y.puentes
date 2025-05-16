@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let ingredient of ingredients">
+    <span>{{ ingredient.nombre }}</span>
+    <span *ngIf="ingredient.cantidad">
+      - {{ ingredient.cantidad }} {{ ingredient.unidad }}</span
+    >
+  </li>
+</ul>
